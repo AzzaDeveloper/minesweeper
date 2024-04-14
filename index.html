@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Minesweeper</title>
+	<!-- Meta -->
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&display=swap" rel="stylesheet"> 
+	<!-- Main CSS -->
+	<link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/buttons.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/themes/colors.css'>
+	<!-- Backgrounds -->
+	<link rel='stylesheet' type='text/css' media='screen' href='css/themes/background/background.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/themes/background/dots.css'>
+</head>
+<body>
+	<div class="background dots-black"></div>
+	<div id="main-screen">
+		<div id="title">
+			<h1 id="title-text">Mine<span id="sweeper">sweeper.</span></h1>
+			<p id="title-subtitle">Flat.</p>
+		</div>
+		<div id="menu">
+			<button class="menu-button black-button black" id="singleplayerButton">SINGLEPLAYER</button>
+			<button class="menu-button black-button black" id="multiplayerButton">MULTIPLAYER</button>
+			<button class="menu-button black-button black" id="optionsButton">OPTIONS</button>
+			<button class="menu-button black-button black" id="creditsButton">CREDITS</button>
+		</div>
+	</div>
+	<!-- Game field -->
+	<div id="game-screen">
+		<div id="game-overlay"></div>
+		<div id="game-field"></div>
+	</div>
+	<div id="difficulties">
+		<button id="left-button" class="black diff-button"><</button>
+		<span id="diff-name" class="black diff-text diff-text-button">Easy</span>
+		<button id="right-button" class="black diff-button">></button>
+		<br>
+		<span id="board-size" class="diff-text">8 x 8</span>
+	</div>
+	<!-- Scripts -->
+	<script src='difficulty.js'></script>
+	<script src='menu.js'></script>
+	<script src='game.js'></script>
+</body>
+</html>

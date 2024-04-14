@@ -1,0 +1,215 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    font-family: "Raleway", sans-serif;
+}
+
+/* Title */
+
+#title {
+    color: white;
+    display: inline-block;
+    margin: 10vh 10vw;
+}
+
+@keyframes title-invert {
+    75% {
+        filter: invert(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        filter: invert(1);
+    }
+}
+
+.title-fade {
+    animation: title-invert 1s forwards;
+}
+
+#sweeper {
+    filter: invert(1);
+    background: black;
+}
+
+#title-text {
+    font-size: 50px;
+    margin: 20% 0px 0px 0px;
+}
+
+#title-subtitle {
+    padding: 3px;
+    margin: 0;
+}
+
+/* Menu */
+
+#menu {
+    margin: 0% 10%;
+    width: 20%;
+}
+
+.menu-button {
+    width: fit-content;
+    color: white;
+    font-size: 22px;
+    font-family: "Raleway", sans-serif;
+    text-align: left;
+    padding: 20px 50px;
+    margin: 15px 0px;
+    border: 0px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* Difficulty selector + Game screen */
+
+#game-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    transition: height 0.25s, width 0.25s, background 0.1s;
+    font-size: 0;
+}
+
+#game-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, gainsboro 50%, rgba(0, 0, 0, 0) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    display: none;
+}
+
+@keyframes game-overlay-fadein {
+    75% {
+        background-position: left bottom;
+        color: rgba(0, 0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        background-position: right bottom;
+    }
+}
+
+.game-overlay-fadein {
+    animation: game-overlay-fadein 1s;
+}
+
+#difficulties {
+    position: fixed;
+    text-align: center;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    margin-top: 10%;
+    color: white;
+    opacity: 0;
+}
+
+@keyframes difficulties-fade {
+    100% {
+        opacity: 1;
+    }
+}
+
+.difficulties-fade {
+    animation: difficulties-fade 1s forwards;
+}
+
+.diff-button {
+    padding: 15px;
+    margin: 15px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: filter 0.25s;
+}
+.diff-button:hover {
+    filter: invert(1);
+}
+
+.diff-text {
+    padding: 15px 35px;
+    font-size: 25px;
+}
+
+.diff-text-button {
+    transition: background-position 0.5s, color 0.5s;
+}
+
+.diff-text-button:hover {
+    background-position: left bottom;
+    color: black;
+    cursor: pointer;
+}
+
+@keyframes diff-text-fade {
+    0% {
+        color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        color: white;
+    }
+}
+
+.diff-text-fade {
+    animation: diff-text-fade 1s;
+}
+
+/* Game field */
+
+#game-field {
+    width: auto;
+    height: auto;
+    padding: 20px;
+}
+
+.cell {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 1px;
+}
+
+@keyframes animateIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.6) translateY(-8px) translateX(-8px);
+    }
+    
+    100% {
+      opacity: 1;
+    }
+}
+
+.cell-cover {
+    display: inline-block;
+    background-color: gainsboro;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 2px;
+    vertical-align: middle;
+    color: white;
+    line-height: 20px;
+    font-family: 'Encode Sans SC', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    transition: background 0.1s;
+    animation-name: animateIn;
+    animation-duration: 100ms;
+    animation-delay: calc(var(--animation-order) * 30ms + 175ms);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}

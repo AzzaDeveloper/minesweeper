@@ -1,0 +1,28 @@
+.black-button {
+    border-left: 10px solid gainsboro;
+}
+
+.black-button:hover {
+    background-position: left bottom;
+    color: black;
+}
+
+@keyframes black-fade {
+    75% {
+        background-position: left bottom;
+        color: rgba(0, 0, 0, 0);
+        opacity: 1;
+    }
+    95% {
+        background-position: right bottom;
+    }
+    100% {
+        opacity: 0;
+        background-position: right bottom;
+        color: rgba(0, 0, 0, 0);
+    }
+}
+
+.black-button-fade {
+    animation: black-fade 1s forwards;
+}
